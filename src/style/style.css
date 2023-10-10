@@ -368,7 +368,7 @@ body #app {
   z-index: 1;
 }
 
-.searchBar {
+.searchForm {
   width: 85vw;
   max-width: 500px;
   height: 4vw;
@@ -387,7 +387,7 @@ body #app {
   justify-content: center;
   align-items: center;
 }
-.searchBar .searchInput {
+.searchForm .searchInput {
   background-color: rgba(255, 255, 255, 0);
   border: none;
   outline: none;
@@ -395,29 +395,29 @@ body #app {
   text-align: center;
   font-size: clamp(25px, 3vw, 32px);
 }
-.searchBar .searchInput::-moz-placeholder {
+.searchForm .searchInput::-moz-placeholder {
   color: #ffffff;
   font-size: clamp(22px, 4vw, 24px);
   letter-spacing: 1px;
   opacity: 0.5; /* Firefox */
 }
-.searchBar .searchInput::placeholder {
+.searchForm .searchInput::placeholder {
   color: #ffffff;
   font-size: clamp(22px, 4vw, 24px);
   letter-spacing: 1px;
   opacity: 0.5; /* Firefox */
 }
-.searchBar .searchInput::-ms-input-placeholder { /* Edge 12 -18 */
+.searchForm .searchInput::-ms-input-placeholder { /* Edge 12 -18 */
   color: #ffffff;
   font-size: clamp(22px, 4vw, 24px);
   letter-spacing: 1px;
 }
-.searchBar .searchBtn {
+.searchForm .searchBtn {
   position: relative;
   height: 30px;
   width: 30px;
 }
-.searchBar .searchBtn button {
+.searchForm .searchBtn button {
   height: 100%;
   width: 30px;
   position: absolute;
@@ -425,10 +425,13 @@ body #app {
   border: none;
   cursor: pointer;
 }
-.searchBar .searchBtn img {
+.searchForm .searchBtn img {
   position: absolute;
   width: 30px;
   filter: invert(100%);
+  opacity: 1;
+}
+.searchForm .searchBtn img.opacity {
   opacity: 0.5;
 }
 

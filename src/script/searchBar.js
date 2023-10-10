@@ -1,27 +1,26 @@
 
+// Import de la fonction handleSearchForm
+import { handleSearchForm } from "./handleSearchForm";
 
-// Récupérer l'input
+
+
+// Récupérer l'input (champ de recherche)
 let searchInput = document.querySelector('.searchInput');
 
-
-// Récupérer le bouton et ajouter un "event" 
-let searchBtn = document.querySelector('.searchBtn');
-searchBtn.addEventListener('click', getInputValue);
-
-
-function getInputValue(e) {
-    e.preventDefault();
-
-    // console.log('searchInput.value : ', searchInput.value);
-    let cityToSearch = searchInput.value;
-    // fetchData('', cityToSearch);
-}
-
+// Écoute l'événement 'input' sur l'élément searchInput (champ de recherche)
+searchInput.addEventListener('input', function(e) {
+    let searchIcon = document.querySelector('.searchBtn img');
+    if (e.target.value !== '' && searchIcon.classList.contains('opacity')) {
+        // Si l'input contient une valeur, on retire l'opacité de l'icône (loupe)
+        searchIcon.classList.remove('opacity');
+    }
+    else if (e.target.value === '' && !searchIcon.classList.contains('opacity')) {  
+        // Si l'input est vide, on ajoute l'opacité de l'icône (loupe)
+        searchIcon.classList.add('opacity');
+    }
+})
 
 
-
-
-// let searchInput = document.querySelector('.searchInput');
-// searchInput.addEventListener('keyup', function(e) {
-//     console.log(e.target.value);
-// });
+// Écoute l'événement de soumission du formulaire
+let searchForm = document.querySelector('.searchForm');
+searchForm.addEventListener('submit', handleSearchForm);
