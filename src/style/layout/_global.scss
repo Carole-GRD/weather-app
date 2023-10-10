@@ -11,11 +11,6 @@ body {
     min-height: 100vh;
     background-color: $color-black;
     font-family: "Inter", sans-serif;
-    // @include display-flex-center;
-    display: flex;
-    // justify-content: center;
-    align-items: center;
-    flex-direction: column;
 
     &::before {
         content: "";
@@ -37,6 +32,12 @@ body {
         height: 100%;
         background: linear-gradient($color-yellow, $color-red);
         clip-path: circle(20% at 20% 80%);
+    }
+
+    #app {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
 }
 

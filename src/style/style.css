@@ -328,9 +328,6 @@ body {
   min-height: 100vh;
   background-color: #050f2c;
   font-family: "Inter", sans-serif;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 body::before {
   content: "";
@@ -353,6 +350,11 @@ body::after {
   background: linear-gradient(#fccf31, #f55555);
   -webkit-clip-path: circle(20% at 20% 80%);
           clip-path: circle(20% at 20% 80%);
+}
+body #app {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .container {
