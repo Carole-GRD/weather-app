@@ -1,6 +1,6 @@
 
 
-.searchbar {
+.searchBar {
     width: 85vw;
     max-width: 500px;
     height: 4vw;
@@ -20,7 +20,7 @@
     backdrop-filter: blur(30px);
     @include display-flex-center;
 
-    #searchInput {
+    .searchInput {
 
         background-color: $color-transparent;
         border: none;
@@ -36,6 +36,28 @@
         
         &::-ms-input-placeholder { /* Edge 12 -18 */
             @include placeholderText;
+        }
+    }
+
+    .searchBtn {
+        position: relative;
+        height: 30px;
+        width: 30px;
+        
+        
+        button {
+            height: 100%;
+            width: 30px;
+            position: absolute;
+            background-color: $color-transparent;
+            border: none;
+            cursor: pointer;
+        }
+        img {
+            position: absolute;
+            width: 30px;
+            filter: invert(100%);
+            opacity: .5;
         }
     }
 }
