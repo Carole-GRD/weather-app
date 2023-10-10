@@ -27,3 +27,8 @@ In this challenge you will use and consolidate your knowledge on:
 - Get the weather data using the native JS fetch() method.
 
 
+## Technology
+
+- Vite.js
+- SASS SCSS
+
