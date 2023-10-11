@@ -4,8 +4,9 @@ const app = document.querySelector('#app');
 
 // Créer la div "container" qui contiendra les cinq cartes avec la météo (pour 5 jours)
 const container = document.createElement('div');
-container.classList.add('container');
-app.appendChild(container);
+container.classList.add('containerCards');
+let containerPhotoGraph = document.querySelector('.containerPhotoGraph');
+app.insertBefore(container, containerPhotoGraph);
 
 /**
  * Affiche les données météorologiques dans une div container.

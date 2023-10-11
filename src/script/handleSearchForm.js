@@ -1,5 +1,5 @@
 
-// Récupérer la fonction "fetchWeatherData"
+// Importe les fonctions fetchWeatherData et weatherContainer
 import { fetchWeatherData } from "./fetchWeatherData";
 import { weatherContainer } from "./weatherContainer";
 

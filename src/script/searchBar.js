@@ -1,5 +1,5 @@
 
-// Importe la fonction handleSearchForm depuis le module handleSearchForm.js// Import de la fonction handleSearchForm
+// Importe la fonction handleSearchForm depuis le module handleSearchForm.js
 import { handleSearchForm } from "./handleSearchForm";
 
 // Récupère la div avec l'ID "app"
@@ -8,8 +8,8 @@ const app = document.querySelector('#app');
 // Crée le formulaire
 const searchForm = document.createElement('form');
 searchForm.classList.add('searchForm');
-const container = document.querySelector('.container');
-app.insertBefore(searchForm, container);
+const containerCards = document.querySelector('.containerCards');
+app.insertBefore(searchForm, containerCards);
 
 // Crée l'input (champ de recherche)
 const searchInput = document.createElement('input');
