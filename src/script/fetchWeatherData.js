@@ -1,7 +1,5 @@
 
 
-
-
 // Clé d'API OpenWeather récupérée depuis les variables d'environnement
 const API_KEY_OPENWEATHER = import.meta.env.VITE_API_KEY_OPENWEATHER;
 
@@ -25,17 +23,20 @@ export async function fetchWeatherData(cityName) {
             return el;
         }
     });
-
+    
     // Construire un tableau d'objets avec les données à afficher
     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     let weatherDataObj = weatherDataFilter.map(el => {
         return {
             icon: `https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`,
-            temp: el.main.temp,
+            temp: Math.round(el.main.temp),
             day: days[new Date(el.dt_txt).getDay()]
         };
     });
     
-    return weatherDataObj;
+    return {
+        city: weatherDataJson.city.name,
+        weather: weatherDataObj
+    }
 }
 

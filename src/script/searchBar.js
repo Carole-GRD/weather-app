@@ -1,14 +1,32 @@
 
-// Import de la fonction handleSearchForm
+// Importe la fonction handleSearchForm depuis le module handleSearchForm.js// Import de la fonction handleSearchForm
 import { handleSearchForm } from "./handleSearchForm";
 
+// Récupère la div avec l'ID "app"
+const app = document.querySelector('#app');
 
-// Récupérer l'input (champ de recherche)
-let searchInput = document.querySelector('.searchInput');
+// Crée le formulaire
+const searchForm = document.createElement('form');
+searchForm.classList.add('searchForm');
+const container = document.querySelector('.container');
+app.insertBefore(searchForm, container);
+
+// Crée l'input (champ de recherche)
+const searchInput = document.createElement('input');
+searchInput.classList.add('searchInput');
+searchInput.setAttribute('name', 'searchInput');
+searchInput.setAttribute('type', 'text');
+searchInput.setAttribute('placeholder', 'Search ...');
+searchForm.appendChild(searchInput);
+
+// Initialise la valeur de l'input à vide lors du chargement de la page
+window.addEventListener('load', function() {
+    searchInput.value = '';
+})
 
 // Écoute l'événement 'input' sur l'élément searchInput (champ de recherche)
 searchInput.addEventListener('input', function(e) {
-    let searchIcon = document.querySelector('.searchBtn img');
+    const searchIcon = document.querySelector('.searchBtn img');
     if (e.target.value !== '' && searchIcon.classList.contains('opacity')) {
         // Si l'input contient une valeur, on retire l'opacité de l'icône (loupe)
         searchIcon.classList.remove('opacity');
@@ -19,7 +37,21 @@ searchInput.addEventListener('input', function(e) {
     }
 })
 
+// Crée le conteneur pour le bouton
+const searchBtn = document.createElement('div');
+searchBtn.classList.add('searchBtn');
+searchForm.appendChild(searchBtn);
 
-// Écoute l'événement de soumission du formulaire
-let searchForm = document.querySelector('.searchForm');
+// Crée l'image
+const searchIcon = document.createElement('img');
+searchIcon.classList.add('opacity');
+searchIcon.setAttribute('src', 'src/asset/image/search-icon-fat.png')
+searchBtn.appendChild(searchIcon);
+
+// Crée le bouton
+const btn = document.createElement('button');
+btn.setAttribute('type', 'submit')
+searchBtn.appendChild(btn);
+
+// Écoute l'événement de soumission du formulaire et appelle la fonction handleSearchForm
 searchForm.addEventListener('submit', handleSearchForm);
