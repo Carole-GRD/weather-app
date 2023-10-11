@@ -1,5 +1,7 @@
 
+// Récupérer la fonction "fetchWeatherData"
 import { fetchWeatherData } from "./fetchWeatherData";
+
 
 /**
  * Gère l'événement de soumission du formulaire de recherche de la ville météo.
@@ -18,7 +20,7 @@ export async function handleSearchForm(event) {
     try {
         // Récupère les données météorologiques en utilisant le nom de la ville
         const weatherData = await fetchWeatherData(cityName);
-        
+
         console.log('Weather Data : ', weatherData);
     } catch (error) {
         console.log("Une erreur s'est produite !", error);

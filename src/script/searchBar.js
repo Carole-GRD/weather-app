@@ -3,7 +3,6 @@
 import { handleSearchForm } from "./handleSearchForm";
 
 
-
 // Récupérer l'input (champ de recherche)
 let searchInput = document.querySelector('.searchInput');
 

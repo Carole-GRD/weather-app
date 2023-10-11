@@ -1,12 +1,13 @@
 
 
 .searchForm {
+    max-width: 220px;
     width: 85vw;
     max-width: 500px;
     height: 4vw;
     min-height: 60px;
     position: relative;
-    margin: 24px;
+    padding: 16px;
     margin-bottom: 5vw;
     background: radial-gradient(
         140% 140% at 0% 0%,
@@ -28,6 +29,7 @@
         color: $color-white;
         text-align: center;
         font-size: clamp(25px, 3vw, 32px);
+        max-width: 150px;
 
         &::placeholder {
             @include placeholderText;
@@ -40,10 +42,10 @@
     }
 
     .searchBtn {
-        position: relative;
+        position: absolute;
+        right: 20px;
         height: 30px;
         width: 30px;
-        
         
         button {
             height: 100%;
@@ -64,3 +66,16 @@
         }
     }
 }
+
+
+
+// @media only screen and (min-width: 536px) {
+//     .searchForm {
+//         width: 85vw;
+//         max-width: 500px;
+
+//         .searchInput {
+
+//         }
+//     }
+// }

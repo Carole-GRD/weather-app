@@ -1,25 +1,8 @@
 
-// // Récupérer la clé d'API OpenWeather
-// const API_KEY_OPENWEATHER = import.meta.env.VITE_API_KEY_OPENWEATHER;
-
-
-// /**
-//  * Effectue une requête pour obtenir les données météorologiques de la ville à partir des coordonnées spécifiées.
-//  * 
-//  * @param {number} latitude - La latitude de la ville.
-//  * @param {number} longitude - La longitude de la ville.
-//  * @returns {Promise<object>} - Les données météorologiques de la ville.
-//  */
-// export async function fetchWeatherData(latitude, longitude) {
-//     const weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY_OPENWEATHER}`;
-//     const weatherResponse = await fetch(weatherApiUrl);
-//     const weatherData = await weatherResponse.json();
-//     return weatherData;
-// }
 
 
 
-// Récupérer la clé d'API OpenWeather
+// Clé d'API OpenWeather récupérée depuis les variables d'environnement
 const API_KEY_OPENWEATHER = import.meta.env.VITE_API_KEY_OPENWEATHER;
 
 /**
@@ -29,12 +12,30 @@ const API_KEY_OPENWEATHER = import.meta.env.VITE_API_KEY_OPENWEATHER;
  * @returns {Promise<object>} - Les données météorologiques de la ville.
  */
 export async function fetchWeatherData(cityName) {
+    // Construire l'URL de l'API OpenWeather
+    const weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${API_KEY_OPENWEATHER}`;
 
-    const weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY_OPENWEATHER}`;
-
+    // Effectuer une requête pour obtenir les données météorologiques
     const weatherResponse = await fetch(weatherApiUrl);
-    const weatherData = await weatherResponse.json();
+    const weatherDataJson = await weatherResponse.json();
+
+    // Filtrer la liste de 40 éléments pour obtenir les données par jour
+    const weatherDataFilter = weatherDataJson.list.filter((el, index) => {
+        if (index % 8 === 0) {
+            return el;
+        }
+    });
+
+    // Construire un tableau d'objets avec les données à afficher
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let weatherDataObj = weatherDataFilter.map(el => {
+        return {
+            icon: `https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`,
+            temp: el.main.temp,
+            day: days[new Date(el.dt_txt).getDay()]
+        };
+    });
     
-    return weatherData;
+    return weatherDataObj;
 }
 
