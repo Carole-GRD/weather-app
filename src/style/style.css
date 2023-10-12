@@ -541,23 +541,14 @@ body #app {
 }
 
 @media only screen and (min-width: 804px) {
-  .containerPhotoGraph .photoContainer img {
-    max-height: 100%;
-  }
-}
-@media only screen and (min-width: 1200px) {
   .containerPhotoGraph {
-    height: calc(80vh - (368px + 4vw));
-    max-width: 1200px;
+    flex-direction: row;
     justify-content: space-around;
-    flex-wrap: wrap;
   }
   .containerPhotoGraph .graphContainer {
-    width: 45%;
-    max-height: 80%;
+    max-width: 45%;
   }
-  .containerPhotoGraph .photoContainer {
-    width: 45%;
+  .containerPhotoGraph .photoContainer img {
     max-height: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

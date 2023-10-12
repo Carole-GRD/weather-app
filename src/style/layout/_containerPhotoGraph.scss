@@ -55,6 +55,14 @@
 
 @media only screen and (min-width: 804px) {
     .containerPhotoGraph {
+        flex-direction: row;
+        justify-content: space-around;
+        // flex-wrap: wrap;
+
+        .graphContainer {
+            max-width: 45%;
+        }
+
         .photoContainer {
             img {
                 max-height: 100%;
@@ -64,22 +72,23 @@
 }
 
 
-@media only screen and (min-width: 1200px) {
-    .containerPhotoGraph {
-        height: calc(80vh - (368px + 4vw));
-        max-width: 1200px;
+// @media only screen and (min-width: 1200px) {
+//     .containerPhotoGraph {
+//         // height: calc(80vh - (368px + 4vw));
+//         max-width: 1200px;
 
-        justify-content: space-around;
-        flex-wrap: wrap;
+//         justify-content: space-around;
+//         flex-wrap: wrap;
 
-        .graphContainer {
-            width: 45%;
-            max-height: 80%;
-        }
+//         .graphContainer {
+//             // width: 45%;
+//             height: 60vmin;
+//             width: 100%;
+//         }
 
-        .photoContainer {
-            width: 45%;
-            max-height: 100%;
-        }
-    }
-}
+//         .photoContainer {
+//             width: 100%;
+//             max-height: 100%;
+//         }
+//     }
+// }
