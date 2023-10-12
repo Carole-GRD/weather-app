@@ -34,7 +34,8 @@ export async function fetchWeatherData(cityName) {
     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     let weatherDataObj = weatherDataFilter.map(el => {
         return {
-            icon: `https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`,
+            // icon: `https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`,
+            icon: `https://openweathermap.org/img/w/${el.weather[0].icon}.png`,
             temp: Math.round(el.main.temp),
             day: days[new Date(el.dt_txt).getDay()]
         };
