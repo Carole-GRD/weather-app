@@ -45,7 +45,7 @@ searchForm.appendChild(searchBtn);
 // Crée l'image
 const searchIcon = document.createElement('img');
 searchIcon.classList.add('opacity');
-searchIcon.setAttribute('src', 'src/asset/image/search-icon-fat.png')
+searchIcon.setAttribute('src', 'image/search-icon-fat.png')
 searchBtn.appendChild(searchIcon);
 
 // Crée le bouton
