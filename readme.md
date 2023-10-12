@@ -31,6 +31,7 @@ In this challenge you will use and consolidate your knowledge on:
 
 - Vite.js
 - SASS SCSS
+- Chart.js
 
 
 ## Environment Variables
@@ -38,3 +39,4 @@ In this challenge you will use and consolidate your knowledge on:
 To run this project, you will need to add the following environment variables to your .env file
 
 `VITE_API_KEY_OPENWEATHER`
+`VITE_API_KEY_UNSPLASH`
