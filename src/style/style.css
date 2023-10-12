@@ -322,6 +322,9 @@ template {
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -354,7 +357,7 @@ body #app {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 5vw;
+  max-height: 100vh;
 }
 
 .searchForm {
@@ -363,6 +366,7 @@ body #app {
   max-width: 500px;
   height: 4vw;
   min-height: 60px;
+  margin-top: 50px;
   position: relative;
   background: radial-gradient(140% 140% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
   border-top: 1px solid rgba(238, 237, 237, 0.4392156863);
@@ -428,6 +432,7 @@ body #app {
 .containerCards {
   position: relative;
   max-width: 1500px;
+  margin: 20px 0;
   display: flex;
   display: flex;
   justify-content: center;
@@ -438,7 +443,7 @@ body #app {
 
 .card {
   width: 220px;
-  height: 320px;
+  height: 280px;
   position: relative;
   margin: 24px;
   background: radial-gradient(140% 140% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
@@ -456,7 +461,6 @@ body #app {
 .card .content {
   width: 100%;
   height: 100%;
-  padding: 16px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -475,7 +479,7 @@ body #app {
 }
 .card .content .temp {
   position: relative;
-  margin: 16px 0 24px;
+  margin-top: 16px;
   font-size: 60px;
   font-weight: 400;
 }
@@ -488,18 +492,14 @@ body #app {
   text-transform: uppercase;
   letter-spacing: 3px;
 }
-.card .content .city {
-  display: block;
-  font-size: 14px;
-  font-weight: 300;
-}
 
 .containerPhotoGraph {
+  position: relative;
   width: 80vw;
-  margin: 24px auto 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 50px;
 }
 .containerPhotoGraph .graphContainer {
   position: relative;
@@ -541,55 +541,23 @@ body #app {
 }
 
 @media only screen and (min-width: 804px) {
-  .containerPhotoGraph {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .containerPhotoGraph .graphContainer {
-    position: relative;
-    z-index: 1;
-    margin: 24px;
-    padding: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .containerPhotoGraph .graphContainer.active {
-    background: radial-gradient(140% 140% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
-    border-top: 1px solid rgba(238, 237, 237, 0.4392156863);
-    border-left: 1px solid rgba(238, 237, 237, 0.4392156863);
-    border-radius: 30px;
-    box-shadow: inset -5px -5px 250px rgba(255, 255, 255, 0.02);
-    -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
-  }
-  .containerPhotoGraph .photoContainer {
-    position: relative;
-    z-index: 1;
-    width: 45%;
-    max-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
   .containerPhotoGraph .photoContainer img {
-    max-width: 100%;
     max-height: 100%;
-    z-index: 9999;
   }
 }
 @media only screen and (min-width: 1200px) {
   .containerPhotoGraph {
-    position: relative;
-    height: 320px;
-    width: 80vw;
+    height: calc(80vh - (368px + 4vw));
     max-width: 1200px;
-    display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
   }
   .containerPhotoGraph .graphContainer {
     width: 45%;
+    max-height: 80%;
+  }
+  .containerPhotoGraph .photoContainer {
+    width: 45%;
+    max-height: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

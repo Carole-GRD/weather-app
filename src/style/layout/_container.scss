@@ -2,10 +2,9 @@
 .containerCards {
     position: relative;
     max-width: 1500px;
+    margin: 20px 0;
     display: flex;
     @include display-flex-center;
-    // align-items: center;
-    // justify-content: center;
     flex-wrap: wrap;
     z-index: 1;
 }

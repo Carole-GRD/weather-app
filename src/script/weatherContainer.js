@@ -58,11 +58,11 @@ export async function weatherContainer(data) {
         celsius.textContent = '°c';
         temp.appendChild(celsius);
 
-        // Afficher le nom de la ville
-        const city = document.createElement('p');
-        city.classList.add('city');
-        city.textContent = data.city;
-        content.appendChild(city);
+        // // Afficher le nom de la ville
+        // const city = document.createElement('p');
+        // city.classList.add('city');
+        // city.textContent = data.city;
+        // content.appendChild(city);
     })
 }
 

@@ -40,7 +40,7 @@ export async function fetchWeatherData(cityName) {
         };
     });
 
-    createChart(weatherDataObj);
+    createChart(weatherDataObj, weatherDataJson.city.name);
     
     return {
         city: weatherDataJson.city.name,
